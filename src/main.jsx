@@ -9,6 +9,7 @@ import './index.css'
 import Products from './routes/products'
 import Product from './routes/product'
 import Submit from './routes/submit'
+import CartContextProvider from './context/CartContext'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartContextProvider>
+      <RouterProvider router={router} />
+    </CartContextProvider>
   </React.StrictMode>,
 )

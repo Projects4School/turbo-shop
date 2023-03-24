@@ -6,8 +6,8 @@ const firebaseConfig = {
     authDomain: "turbo-shops.firebaseapp.com",
     projectId: "turbo-shops",
     storageBucket: "turbo-shops.appspot.com",
-    messagingSenderId: "997009981183",
-    appId: "1:997009981183:web:23b883f5a162f0751e96ca"
+    messagingSenderId: import.meta.env.FIREBASE_MESSID,
+    appId: import.meta.env.FIREBASE_APPID
 }; // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

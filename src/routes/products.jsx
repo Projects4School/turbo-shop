@@ -7,11 +7,12 @@ function Products() {
   const [products, setProducts] = useState([])
 
   const fetchProducts = async () => {
-    //const querySnapshot = await getDocs(collection(database, "products"));
-    //querySnapshot.forEach((doc) => {
-      //products.push(doc.data());
-      //console.log(`${doc.id} => ${doc.data()}`);
-    //});
+    const querySnapshot = await getDocs(collection(database, "products"));
+    const productsArray = [];
+    querySnapshot.forEach((doc) => {
+      productsArray.push(doc.data());
+    });
+    setProducts(productsArray);
   }
 
   useEffect(() => {
@@ -21,8 +22,7 @@ function Products() {
   return (
     <>
         <div className="grid grid-cols-3 gap-3" >
-            {Array(5).fill().map(()=> <ProductCard></ProductCard> )}
-            
+            {products.map((elem)=> <ProductCard product={elem} key={elem.name}/> )}
         </div>
     </>
   )
