@@ -15,7 +15,7 @@ function Header() {
                 <nav className="flex items-center">
                     <Link className="mx-8" to={'/products'}>Products</Link>
                     <Link className="mx-8" to={'/submit'}>Submit</Link>
-                    <Link className="mx-8" to={'/submit'}>Cart : {myCartContext.myCart.length}</Link>
+                    <Link className="mx-8" to={'/cart'}>Cart : {myCartContext.myCart.length}</Link>
                 </nav>
             </div>
         </div>
